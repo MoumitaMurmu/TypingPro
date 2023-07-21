@@ -1,6 +1,6 @@
 ## TypingPro | Unlock Your Typing Potential.
 
-*Develop a dynamic typing test component offering users random word challenges and the ability to choose between time and word-based modes. Enable user authentication through Firebase, enabling seamless login and signup functionality, with additional login options like Google. Utilize Firestore, a NoSQL database from Firebase, to store user test results. Create a user page presenting individual data and typing test analysis. Implement a compare feature, allowing users to track progress. Enhance user experience with multiple website themes, granting users the freedom to customize their typing test environment.
+* Develop a dynamic typing test component offering users random word challenges and the ability to choose between time and word-based modes. Enable user authentication through Firebase, enabling seamless login and signup functionality, with additional login options like Google. Utilize Firestore, a NoSQL database from Firebase, to store user test results. Create a user page presenting individual data and typing test analysis. Implement a compare feature, allowing users to track progress. Enhance user experience with multiple website themes, granting users the freedom to customize their typing test environment.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
