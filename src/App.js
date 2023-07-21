@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./Styles/global";
+import { useTheme } from "./Context/ThemeContext";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./Pages/HomePage";
+import UserPage from "./Pages/UserPage";
+import AboutUs from "./Pages/AboutUs";
+import Tutorial from "./Pages/Tutorial";
+
 
 function App() {
+  const {theme} = useTheme();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={theme}>
+    <ToastContainer />
+    <GlobalStyles/>
+
+    <Routes>
+      <Route path="/" element={<HomePage/>}/>
+      <Route path="/user" element={<UserPage/>}/>
+      <Route path="/about" element={<AboutUs/>}/>
+      <Route path="/tutorial" element={<Tutorial/>}/>
+
+    </Routes>
+  
+    
+    </ThemeProvider>
+ 
+    );
 }
 
 export default App;
+
