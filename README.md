@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# # TypingPro | Unlock Your Typing Potential.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Develop a dynamic typing test component offering users random word challenges and the ability to choose between time and word-based modes. Enable user authentication through Firebase, enabling seamless login and signup functionality, with additional login options like Google. Utilize Firestore, a NoSQL database from Firebase, to store user test results. Create a user page presenting individual data and typing test analysis. Implement a compare feature, allowing users to track progress. Enhance user experience with multiple website themes, granting users the freedom to customize their typing test environment.
 
 In the project directory, you can run:
 
@@ -11,60 +11,39 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
+See the Live demo of the project:  [deployment](https://typing-pro-reactjs.netlify.app/) .
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Home Component
+Basic landing page of the application.
 
-### `npm run build` fails to minify
+![homepage](https://github.com/MoumitaMurmu/TypingPro/assets/69195751/d84599dd-374a-4c9d-bbdf-a3241cf8c39d)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Theme Options
+Where users can experience with multiple website themes.
+
+![themeoptions](https://github.com/MoumitaMurmu/TypingPro/assets/69195751/d6195ae1-f972-43e3-812f-210f28cbb655)
+
+## Stats Component
+Where users can see their Result.
+
+![result](https://github.com/MoumitaMurmu/TypingPro/assets/69195751/31019ad6-4021-417e-8b20-748f6441f7f1)
+
+## UserPage 
+Where users can access their basic informations and view a comprehensive history of your typing test results.
+![userpage](https://github.com/MoumitaMurmu/TypingPro/assets/69195751/133d933f-3a89-4ce6-9c34-d5b4e5f156c7)
+
+## Tutorial Page
+Where users can find comprehensive guidance on mastering the fundamental steps to improve typing speed effectively.
+* Finger Placements:
+![finger placement](https://github.com/MoumitaMurmu/TypingPro/assets/69195751/88d3570f-edb9-42bd-9e35-50d58f0599f3)
+
+* Finger Co-relation:
+  ![finger corelation](https://github.com/MoumitaMurmu/TypingPro/assets/69195751/306321c7-949a-4b1b-af13-23160cd7b60d)
+
+## About Us Page
+Here, we take great pride in introducing our mission, values, and commitment to providing a seamless and enriching typing experience for our users. Learn more about our team, our dedication to fostering typing skills, and the passion that drives us to create innovative tools for learning and growth.
+![About us](https://github.com/MoumitaMurmu/TypingPro/assets/69195751/c59f603e-f2b2-4a8e-820f-4d15e14fe485)
+
+
