@@ -1,19 +1,10 @@
-# # TypingPro | Unlock Your Typing Potential.
+## TypingPro | Unlock Your Typing Potential.
+
+*Develop a dynamic typing test component offering users random word challenges and the ability to choose between time and word-based modes. Enable user authentication through Firebase, enabling seamless login and signup functionality, with additional login options like Google. Utilize Firestore, a NoSQL database from Firebase, to store user test results. Create a user page presenting individual data and typing test analysis. Implement a compare feature, allowing users to track progress. Enhance user experience with multiple website themes, granting users the freedom to customize their typing test environment.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Develop a dynamic typing test component offering users random word challenges and the ability to choose between time and word-based modes. Enable user authentication through Firebase, enabling seamless login and signup functionality, with additional login options like Google. Utilize Firestore, a NoSQL database from Firebase, to store user test results. Create a user page presenting individual data and typing test analysis. Implement a compare feature, allowing users to track progress. Enhance user experience with multiple website themes, granting users the freedom to customize their typing test environment.
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-
-### Deployment
-See the Live demo of the project:  [deployment](https://typing-pro-reactjs.netlify.app/) .
+### `npm start` Runs the app in the development mode.
 
 ## Home Component
 Basic landing page of the application.
@@ -46,4 +37,6 @@ Where users can find comprehensive guidance on mastering the fundamental steps t
 Here, we take great pride in introducing our mission, values, and commitment to providing a seamless and enriching typing experience for our users. Learn more about our team, our dedication to fostering typing skills, and the passion that drives us to create innovative tools for learning and growth.
 ![About us](https://github.com/MoumitaMurmu/TypingPro/assets/69195751/c59f603e-f2b2-4a8e-820f-4d15e14fe485)
 
+### Deployment
+See the Live demo of the project:  [deployment](https://typing-pro-reactjs.netlify.app/) .
 
