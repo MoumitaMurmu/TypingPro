@@ -9,27 +9,27 @@ import UserPage from "./Pages/UserPage";
 import AboutUs from "./Pages/AboutUs";
 import Tutorial from "./Pages/Tutorial";
 
-
 function App() {
-  const {theme} = useTheme();
+  // Extract the current theme from the ThemeContext
+  const { theme } = useTheme();
+
   return (
     <ThemeProvider theme={theme}>
-    <ToastContainer />
-    <GlobalStyles/>
+      {/* ToastContainer for displaying notifications */}
+      <ToastContainer />
+      
+      {/* Apply global styles */}
+      <GlobalStyles/>
 
-    <Routes>
-      <Route path="/" element={<HomePage/>}/>
-      <Route path="/user" element={<UserPage/>}/>
-      <Route path="/about" element={<AboutUs/>}/>
-      <Route path="/tutorial" element={<Tutorial/>}/>
-
-    </Routes>
-  
-    
+      {/* Define routes using React Router's Routes */}
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/user" element={<UserPage/>} />
+        <Route path="/about" element={<AboutUs/>} />
+        <Route path="/tutorial" element={<Tutorial/>} />
+      </Routes>
     </ThemeProvider>
- 
-    );
+  );
 }
 
 export default App;
-
