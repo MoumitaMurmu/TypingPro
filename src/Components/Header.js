@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import AccountCircle from './AccountCircle';
 
-import logo from '../asset/TypingProBTransparent.png';
+import logo from '../assest/TypingProBTransparent.png';
 
 const Header = () => {
   const [animatedText, setAnimatedText] = useState('');
@@ -76,10 +76,3 @@ const Header = () => {
 };
 
 export default Header;
-
-      
-    
-  
-
-
-    
