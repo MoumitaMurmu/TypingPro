@@ -1,12 +1,13 @@
 
 import { createGlobalStyle } from "styled-components";
 
+// Define global styles using styled-components
  export const GlobalStyles = createGlobalStyle`
 *{
     box-sizing: border-box;
    }
 
-
+/* styles for the body */
 
  body {
    margin: 0;
@@ -19,7 +20,7 @@ import { createGlobalStyle } from "styled-components";
 
  }
 
-
+  /* Styles for the main canvas */
 
  .canvas {
    display: grid;
@@ -51,7 +52,7 @@ import { createGlobalStyle } from "styled-components";
    background-size: cover;
  }
 
-
+ /* Styles for the type box */
 
  .type-box {
    display: block;
@@ -70,13 +71,14 @@ import { createGlobalStyle } from "styled-components";
     display: flex;
     flex-wrap: wrap;
     color: ${({theme})=>theme.typeBoxText};
-
  }
+
+ /* Styling for individual words */
  .word{
     margin: 5px;
     padding-right: 2px;
  }
-
+ /* Styling for the hidden input (used for typing) */
  .hidden-input{
     opacity: 0;
  }
@@ -202,16 +204,16 @@ import { createGlobalStyle } from "styled-components";
  }
 
  .header {
-   background-color: #64b4cf;
-   padding: 10px;
+    background-color: #64b4cf;
+    padding: 10px;
  
-   border-bottom: 2px solid #333;
+    border-bottom: 2px solid #333;
     height: 90px;
     box-shadow: 0 0 17px 2px #3b3b3b;
  
     display: flex;
-   justify-content: space-between;
-   align-items: center;
+    justify-content: space-between;
+    align-items: center;
   
  }
 
@@ -261,11 +263,6 @@ import { createGlobalStyle } from "styled-components";
  }
 
 
- .nav-links {
-   gap: 2rem;
-   margin-right: 3rem;
-
- }
 
 
 
@@ -361,18 +358,45 @@ import { createGlobalStyle } from "styled-components";
    font-size: 1.2rem;
  }
 
- .permalinks li a{
-    color: ${({theme})=>theme.typeBoxText};
-   
+
+ .permalinks li a {
+    color: ${({ theme }) => theme.typeBoxText};
     text-decoration: none;
- }
+    position: relative;
+    display: inline-block;
+    padding: 2px 5px;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
 
- .permalinks li a:hover{
-     background: transparent;
-     color: ${({theme})=>theme.textColor};
-     transition: all 0.3s;
+.permalinks li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${({ theme }) => theme.textColor};
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+}
 
- }
+.permalinks li a:hover {
+    background-color: ${({ theme }) => theme.textColor};
+    color: ${({ theme }) => theme.backgroundColor};
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.permalinks li a:hover::before {
+    opacity: 0.3;
+}
+
+
+
+
 
  /* Footer socials */
  .footer__socials {
@@ -382,7 +406,7 @@ import { createGlobalStyle } from "styled-components";
    margin-left: 20px; /* Add some spacing between the permalinks and socials */
  }
 
- .footer__socials a {
+ .footer__socials span {
    font-size: 1.2rem;
    margin-right: 10px;
   /* Change the color as per your design */
@@ -396,16 +420,15 @@ import { createGlobalStyle } from "styled-components";
 
  }
 
- .footer__socials a:last-child {
+ .footer__socials span:last-child {
    margin-right: 0; /* Remove margin from the last icon to keep them on the same line */
 
  }
 
- .footer__socials a:hover{
+ .footer__socials span:hover{
      background: transparent;
      color:${({theme})=>theme.typeBoxText};
-
-     border-color: ${({theme})=>theme.background};
+     border: 1px solid blue;
 
  }
 
@@ -509,8 +532,8 @@ import { createGlobalStyle } from "styled-components";
    text-align: center;
    box-shadow: 0 0 15px 2px #3b3b3b;
    margin: 2rem 2rem 0 2rem;
-   border-top-left-radius: 10%;
-   border-top-right-radius: 10%;
+   border-top-left-radius: 5%;
+   border-top-right-radius: 5%;
    overflow: hidden;
    position: relative;
    background: ${({theme})=>theme.background}; 
@@ -568,103 +591,86 @@ import { createGlobalStyle } from "styled-components";
     margin: 50px;
   
   }
-  .copyright{
-    width: 350px;
-    padding: 6px;
-    text-align: center;
-    height: 50px;
-    color: #fff;
-    margin-top: 2rem;
-    font-family: open sans,Arial,sans-serif;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-
- .themeButton{
-    padding: 0.5rem;
-    width: 150px;
-   }
+ 
 
  .email{
-    font-size: 1.4rem;
+     font-size: 1.4rem;
     font-family: 'Dancing Script';
     marginBottom: 2px;
     margin-right: 3px;
   
  }
 
- .signin-signup-box{
+
+ .signin-signup-box {
     width: 750px;
     height: 600px;
     display: flex;
-    justifyContent: space-between;
+    justify-content: space-between;
     background-image: linear-gradient(to top, #d16ba5, #c56db4, #b571c2, #a075cf, #847bd9, #6b8ae7, #4a98f2, #00a5f8, #00bdff, #00d3ff, #00e8f9, #5ffbf1);
- 
     border-top-left-radius: 60px;
     border-bottom-right-radius: 60px;
-    box-shadow: 0 9px 24px rgba(0,0,0,.12), 0 9px 24px rgba(0,0,0,.12);
-   
+    box-shadow: 0 9px 24px rgba(0, 0, 0, .12), 0 9px 24px rgba(0, 0, 0, .12);
+}
 
- }
+.signin-signup-box .sign-up-btn {
+    padding: 8px 16px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
- .sign-up-btn{
-    padding: '8px 16px',
-     background: '#333',
-     color: '#fff',
-     border: 'none',
-     borderRadius: '4px',
-     cursor: 'pointer',
- }
-
- .create-your-acnt-title{
-    
+.signin-signup-box .create-your-acnt-title {
     text-align: center;
     margin-right: 1rem;
     color: #094e63;
     font-size: 1.5rem;
     font-weight: bold;
     border-bottom: 2px solid #d4d7d3;
-    font-family: open sans,Arial,sans-serif;
- }
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin-bottom: 2rem; /* Adjust margin to separate the title from the image */
+}
 
- .photo-div{
-    height: 90px;
-    width: 320px;
-    margin:1rem;
-  }
+.signin-signup-box .photo-div {
+    margin: 1rem;
+    flex: 1; /* Allow the photo-div to grow and take remaining space */
+}
 
-  .my-logo img{
-    height: 90px;
-    width: 300px;
-  }
+.signin-signup-box .photo-div h1{
+  font-family: 'Open Sans', Arial, sans-serif;
+  background-image: linear-gradient(to right bottom, #5c3ac7, #007bfa, #00a7f8, #00c9d1, #00e5a2, #1deb95, #37f186, #4ff774, #0fee98, #00e3b3, #2ad7c2, #5ac9c7);
+  text-align: center;
+  border-top-left-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+  font-size: 20px;
+}
 
- .photo-div h1{
-   
-    text-align: center;
-    margin-right: 1rem;
-    color: #094e63;
-    font-size: 1rem;
-    font-weight: bold;
-    ${'' /* border-bottom: 2px solid #d4d7d3; */}
-    font-family: open sans,Arial,sans-serif;
-    ${'' /* border:1px solid black; */}
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+.signin-signup-box .my-logo img {
+    width: 100%; /* Allow the logo image to take the full available width */
+    height: auto; /* Automatically adjust the height to maintain the original aspect ratio */
+}
 
- }
-
- .my-image{
+.signin-signup-box .my-image {
     margin-top: 2rem;
-    height: 300px;
-    width: 300px;
+    width: 100%; /* Allow the my-image container to take the full available width */
+    height: 300px; /* Set a fixed height for the my-image container */
     background: transparent;
-    box-shadow: 0 9px 24px rgba(0,0,0,.12), 0 9px 24px rgba(0,0,0,.12);
- }
- .my-image img{
-   height: 300px;
-   width: 300px;
- }
+    box-shadow: 0 9px 24px rgba(0, 0, 0, .12), 0 9px 24px rgba(0, 0, 0, .12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signin-signup-box .my-image img {
+    max-width: 100%; /* Allow the image to take the full available width inside the container */
+    height: auto; /* Automatically adjust the height to maintain the image's aspect ratio */
+}
+
+
+
+
 
  .about{
     display: grid;
@@ -738,23 +744,24 @@ import { createGlobalStyle } from "styled-components";
    transition-delay: 1.6s;
  }
 
- .tutorial-heading{
+ /* CSS FOR TUTORIAL PAGE*/
+
+  .tutorial-heading{
     border: 1px soild balck;
     height: 70px;
     width: 900px;
     background-image: linear-gradient(to right bottom, #5c3ac7, #007bfa, #00a7f8, #00c9d1, #00e5a2, #1deb95, #37f186, #4ff774, #0fee98, #00e3b3, #2ad7c2, #5ac9c7);
     text-align: center;
     padding: 10px;
- position: relative;
- left: 190px;
+    position: relative;
+    left: 190px;
     margin: 15px;
-    ${'' /* font-family: open sans,Arial,sans-serif; */}
     font-family: 'Oswald', sans-serif;
     border-top-left-radius: 25%;
    border-top-right-radius: 25%;
    padding: 10px;
    border: 4px solid black;
- }
+ } 
  .tutorial-container{
     background:black;
  
@@ -767,8 +774,8 @@ import { createGlobalStyle } from "styled-components";
    font-family: open sans,Arial,sans-serif;
     background: ${({theme})=>theme.background}; 
    color: ${({theme})=>theme.textColor};
- }
- .left{
+ } 
+  .left{
     background-image: linear-gradient(to left top, #19132e, #003459, #005878, #007d81, #009f75, #55a654, #8ca831, #c4a416, #e28731, #ef6b56, #e65a7c, #c95a9f);
     margin: 2rem;
     height: 755px;
@@ -781,8 +788,8 @@ import { createGlobalStyle } from "styled-components";
     box-shadow: 0 0 15px 2px #3b3b3b;
     color: black;
 
- }
- .right{
+ } 
+  .right{
     background-image: linear-gradient(to bottom, #eadce6, #d5b8d3, #bb96c5, #9a77b9, #725baf, #8750ab, #9c42a3, #b02d96, #e93875, #ff684e, #ffa02b, #e1d631);
     margin: 5rem;
     height: 885px;
@@ -796,7 +803,7 @@ import { createGlobalStyle } from "styled-components";
     box-shadow: 0 0 15px 2px #3b3b3b;
     color: black;
     border: 1px solid aqua;
- }
+ } 
  .step{
     width:200px;
     height:60px;
@@ -805,27 +812,27 @@ import { createGlobalStyle } from "styled-components";
     text-align: center;
     box-shadow: 0 0 15px 2px #3b3b3b;
 
- }
+ } 
 
- .hand-position{
+  .hand-position{
     height: 400px;
     width: 400px;
     margin: 1rem;
     border-radius: 20px;
     box-shadow: 0 0 15px 2px #3b3b3b;
     cursor: pointer;
- }
+ } 
    
 
 
- .finger-corelation{
+  .finger-corelation{
     height: 400px;
     width: 400px;
     margin: 1rem;
     border-radius: 20px;
     box-shadow: 0 0 15px 2px #3b3b3b;
     cursor: pointer;
- }
+ } 
 
 
  .muscle{
@@ -835,8 +842,7 @@ import { createGlobalStyle } from "styled-components";
     border-radius: 20px;
     box-shadow: 0 0 15px 2px #3b3b3b;
     cursor: pointer;
- }
-
+ } 
 
  .speed-up{
     height: 380px;
@@ -845,9 +851,12 @@ import { createGlobalStyle } from "styled-components";
     border-radius: 20px;
     box-shadow: 0 0 15px 2px #3b3b3b;
     cursor: pointer;
- }
+ } 
 
- /* animation-styles.css */
+
+
+
+ /* TUTORIAL PAGE animation-styles.css */
 
  @keyframes fadeIn {
    from {
@@ -885,14 +894,601 @@ import { createGlobalStyle } from "styled-components";
   animation-delay: 0.2s; /* Delay the animation for a smoother effect */
  }
 
- /* ===========Responsive for All Screen*================/
- 
- 
- 
- 
+
+ @media (max-width: 768px) {
+
+    /*  styles for mobile devices here */
+
+    /* for header*/ 
+
+    .header {
+      padding: 5px;
+      height: auto;
+   }
+   .navbar {
+      width: 100%;
+      float: none;
+      margin-right: 0;
+      flex-direction: column;
+   }
+   .logo {
+      font-size: 20px;
+      margin-left: 0;
+      margin-bottom: 1rem;
+   }
+   .logo img {
+      height: 50px;
+      width: 200px;
+   }
+   .logo h6 {
+      width: 100%;
+      border-radius: 0;
+   }
+   .user-icon {
+      margin-right: 1rem;
+   }
+
+  
+   /* for canvas*/
+
+   .canvas {
+      padding: 1rem;
+      margin: 1rem 1rem 0 1rem;
+      border-top-left-radius: 10%;
+      border-top-right-radius: 10%;
+   }
+  /* for Type box*/
+
+  .type-box {
+      max-width: 95%;
+   }
+
+   .words {
+      font-size: 24px;
+   }
+
+   .word {
+      margin: 3px;
+      padding-right: 1px;
+   }
+
+   /*for upper menu*/
+   .upper-menu {
+        width: 95%;
+        font-size: 1.2rem;
+        padding: 1.2rem;
+    }
+
+    .counter {
+        height: 40px;
+        width: 40px;
+        border-width: 3px;
+    }
+
+    .countdown-text {
+        height: 35px;
+        width: 35px;
+        font-size: 0.9rem;
+        padding-top: 6px;
+    }
+
+    /* for Time Mode*/
+    .time-mode {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+   }
+
+   /*footer*/
+   .footer {
+      padding: 10px 5px; /* Reduce padding for smaller screens */
+   }
+
+   .footer__logo img {
+      height: 60px;
+      width: 180px;
+   }
+
+   .permalinks li {
+      font-size: 1rem;
+   }
+
+   .footer__socials span {
+      font-size: 1rem;
+      padding: 0.5rem;
+   }
+   
+   .footer__socials span:last-child {
+      margin-right: 5px; /* Adjust spacing for the last icon on mobile */
+   }
+
+   .footer__copyright {
+      margin-top: 0.5rem;
+   }
+
+    /* For Login-Signup page */
+    .signin-signup-box {
+        width: 90%;
+        height: auto;
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
+
+    .signin-signup-box .create-your-acnt-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .signin-signup-box .sign-up-btn {
+        font-size: 1rem;
+        font-family: 
+    }
+
+    .signin-signup-box .photo-div,
+    .signin-signup-box .my-image {
+        width: 100%; /* Allow both divs to take the full available width */
+        max-width: 300px; /* Set a maximum width to maintain the original size */
+        margin: 1rem auto; /* Center both divs horizontally */
+    }
+    .signin-signup-box .my-logo img {
+        max-width: 100%; /* Allow the logo image to take the full available width */
+    }
+
+    .signin-signup-box .my-image img {
+        max-width: 100%; /* Allow the image to take the full available width inside the container */
+        height: auto; /* Automatically adjust the height to maintain the image's aspect ratio */
+    }
+
+    /*FOR ABOUT PAGE*/
+    .about {
+        width: 90%;
+        margin: 2rem auto 0 auto;
+        border-radius: 0; /* Remove border radius for smaller screens */
+    }
+
+    .about-main section p {
+        font-size: 16px;
+        margin-left: 0; /* Center the paragraph horizontally on smaller screens */
+    }
+
+    /*for TUTORIAL PAGE*/
+
+    .tutorial-heading {
+        width: 90%;
+        max-width: 500px;
+        left: 0;
+        right: 0;
+        margin: 15px auto;
+        font-size: 22px;
+    }
+
+    .tutorial-container {
+        width: 90%;
+        margin: 20px auto 0 auto;
+    }
+
+   
+    .left,
+    .right {
+        width: 98%;
+        max-width: 550px;
+        left: 0;
+        right: 0;
+        margin: 1rem auto;
+        
+    }
+
+    .right {
+        left: 0;
+        right: 0;
+        margin: 5rem auto;
+    }
+    .step {
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+      
+    }
 
     
+   
+    .hand-position,
+    .finger-corelation,
+    .muscle,
+    .speed-up {
+        width: 100%;
+        max-width: 260px;
+        height: 260px;
+        margin: 1rem auto;
+    }
+
+    /*FOR USER RESULT PAGE*/
+    .user-profile {
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin: 0;
+        width: 640px;
+        height: 16rem;
+        padding: 5px;
+    }
+    .user-result{
+      border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 1rem auto;
+    }
+    .user {
+        font-size: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .picture {
+        margin: 0.5rem auto;
+        height: 100px;
+        width: 100px;
+    }
+
+    .total-tests {
+        font-size: 1.2rem;
+    }
+
+    .stats-Box {
+    flex-direction: column;
+    width: 95vw;
+    padding: 20px;
+  }
+
+  .laft-stats {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .right-stats {
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+}
 
 
+/* Media query for max-width 1024px (Tablets and larger mobile devices) */
+@media (max-width: 1024px) {
+
+  .navbar {
+    width: 600px;
+    margin-right: 2rem;
+  }
+
+  .logo img {
+    height: 60px;
+    width: 250px;
+  }
+
+  .logo h6 {
+    width: 200px;
+    font-size: 14px;
+  }
+
+  .nav-link {
+    font-size: 18px;
+   
+   
+  }
+    .user-profile {
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+
+    .user {
+        font-size: 1rem;
+    }
+
+    .picture {
+        height: 100px;
+        width: 100px;
+    }
+
+    .total-tests {
+        font-size: 1.8rem;
+    }
+
+    .table,
+    .graph-user-page {
+        width: 95%;
+    }
+
+    .stats-Box {
+    flex-direction: column;
+    width: 90vw;
+    padding: 15px;
+  }
+
+  .laft-stats {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .right-stats {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .modes{
+    width: 650px;
+  }
+  .type-box{
+    width: 750px; 
+  }
+  /* Media query for max-width 1024px (Tablets and smaller devices) */
+
+}
+  /* Media query for screen width between 769px and 853px */
+@media (min-width: 769px) and (max-width: 853px) {
+  .navbar {
+    width: 400px;
+    margin-right: 1rem;
+  }
+
+  .logo img {
+    height: 50px;
+    width: 180px;
+  }
+
+  .logo h6 {
+    width: 130px;
+    font-size: 12px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    
+  }
+  .canvas{
+    padding: 20px;
+    margin: 1rem 1rem 0 1rem;
+  }
+  .type-box{
+    height:  300px;
+    margin: 4rem;
+   
+  }
+  .words{
+    font-size: 12px;
+    
+    
+  }
+  .upper-menu{
+    margin: 4rem;
+    width: 650px;
+  }
+  .modes{
+    margin-right: 5rem;
+  }
+ 
+}
+/* Media query for screen width between 614px and 713px */
+@media (min-width: 614px)and(max-width: 713px) {
+  .navbar {
+    width: 400px;
+    margin-right: 1rem;
+    
+  }
+
+  .logo img {
+    height: 40px;
+    width: 150px;
+  }
+
+  .logo h6 {
+    width: 300px;
+    font-size: 20px;
+  }
+
+  .nav-link {
+    font-size: 40px;
+    padding: 5px;
+   
+  }
+
+  .user-icon svg {
+    font-size: 25px;
+  }
+}
+/* Media query for max-width 520px */
+@media (max-width: 600px) {
+  .header {
+    height: 75px;
+    padding: 10px;
+  }
+
+  .navbar {
+    width: 200px;
+    margin-right: 1rem;
+  }
+
+  .logo img {
+    height: 40px;
+    width: 120px;
+  }
+
+  .logo h6 {
+    width: 100px;
+    font-size: 10px;
+  }
+
+  .user-icon {
+    margin-right: 1rem;
+    
+  }
+
+  .user-icon svg {
+    font-size: 15px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+  }
+
+  .nav-link {
+    font-size: 12px;
+    padding: 2px;
+  }
+  .canvas{
+    
+  }
+  .type-box{
+    
+   
+  }
+  .words{
+    width: 500px;
+    padding: 5px;
+    font-size: 20px;
+   
+  }
+  
+}
+
+/* Media query for max-width 520px */
+@media (max-width: 514px) {
+  .header {
+    height: 70px;
+    padding: 5px;
+    width: 550px;
+  }
+
+  .navbar {
+    width: 200px;
+    margin-right: 1rem;
+  }
+ 
+  .logo img {
+    height: 40px;
+    width: 120px;
+  }
+
+  .logo h6 {
+    width: 100px;
+    font-size: 10px;
+  }
+
+
+  .user-icon {
+    margin-right: 1rem;
+  }
+
+  .user-icon svg {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-right: 1rem;
+    text-align: center;
+  }
+
+  .nav-link {
+    font-size: 10px;
+    padding: 5px;
+  }
+  .footer{
+    width: 550px;
+  }
+  .canvas{
+    width: 520px;
+  }
+}
+@media (max-width: 484px){
+  .header {
+    height: 100px;
+   
+  }
+  .canvas{
+   height: 600px;
+   
+  }
+
+
+  .type-box{
+    margin: 2rem;
+  }
+  .words{
+   padding: 5px;
+    font-size: 10px;
+  }
+}
+@media (max-width: 365px){
+  .header {
+    height: 200px;
+   
+  }
+  .canvas{
+    margin-top: 5rem;
+   height: 800px;
+  }
+  .footer{
+    height: 500px;
+  }
+}
+
+@media (max-width: 210px){
+  .header {
+    height: 350px;
+   
+  }
+  .canvas{
+    margin-top: 5rem;
+   height: 1500px;
+  }
+  .footer{
+    height: 500px;
+  }
+}
+
+@media (max-width: 1075px){
+  .canvas{
+    padding: 20px;
+  }
+  .type-box{
+    width: 870px;
+    height:  300px;
+    margin: 3rem; 
+    padding: 10px;
+  }
+  .words{
+    font-size: 20px;
+     
+    
+  }
+  .upper-menu{
+    margin: 2rem;
+  }
+  .modes{
+    margin-right: 5rem;
+  }
+}
+@media(min-width: 1025px)and (max-width: 1070px){
+.upper-menu{
+  margin: 2rem;
+}
+.modes{
+  width: 400px;
+  margin: 2rem;
+}
+
+}
 `
   
