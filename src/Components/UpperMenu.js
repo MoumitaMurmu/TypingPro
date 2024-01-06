@@ -1,23 +1,26 @@
-
-
-import React, { useEffect, useState } from 'react';
+// Import React and the useTestMode hook from the TestModeContext
+import React from 'react';
 import { useTestMode } from '../Context/TestModeContext';
 
-const UpperMenu = ({ countDown}) => {
+// Functional component for the upper menu, displaying countdown and time mode options
+const UpperMenu = ({ countDown }) => {
+  // Destructure setTestTime from the useTestMode hook
   const { setTestTime } = useTestMode();
 
+  // Function to update the test time based on the selected time mode
   const updateTime = (e) => {
     setTestTime(Number(e.target.id));
   };
 
- 
-
+  // JSX rendering for the upper menu component
   return (
     <div className='upper-menu'>
+      {/* Display the countdown */}
       <div className='counter'>
         <div className='countdown-text'>{countDown}</div>
-
       </div>
+
+      {/* Display time mode options with click handlers to update the test time */}
       <div className='modes'>
         <div className='time-mode' id={15} onClick={updateTime}>
           15s
@@ -36,11 +39,5 @@ const UpperMenu = ({ countDown}) => {
   );
 };
 
+// Export the UpperMenu component as the default export
 export default UpperMenu;
-
-
-
-
-
-    
-             
