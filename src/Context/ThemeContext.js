@@ -1,22 +1,31 @@
+// Import necessary modules from React
 import { createContext, useContext, useState } from "react";
 import { themeOptions } from "../Utils/themeOptions";
 
+// Create a new context for managing the theme
 const ThemeContext = createContext();
 
-export const ThemeContextProvider = ({children})=>{
-const defaultValue = JSON.parse(localStorage.getItem('theme')) || themeOptions[0].value;
+// ThemeContextProvider component definition
+export const ThemeContextProvider = ({ children }) => {
+  // Retrieve the default theme from localStorage or use the first theme option
+  const defaultValue = JSON.parse(localStorage.getItem('theme')) || themeOptions[0].value;
 
-const[theme, setTheme] = useState(defaultValue);
+  // State to manage the current theme
+  const [theme, setTheme] = useState(defaultValue);
 
-const values = {
+  // Values to be provided by the context
+  const values = {
     theme,
-    setTheme
+    setTheme,
+  };
+
+  // Provide the values to the context for its children
+  return (
+    <ThemeContext.Provider value={values}>
+      {children}
+    </ThemeContext.Provider>
+  );
 }
 
-    return(<ThemeContext.Provider value={values}>{children}</ThemeContext.Provider>)
-}
-
-export const useTheme = ()=> useContext(ThemeContext);
-
-
-
+// Custom hook to access the theme context values
+export const useTheme = () => useContext(ThemeContext);
